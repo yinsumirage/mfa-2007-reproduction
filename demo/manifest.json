@@ -1,0 +1,14 @@
+{
+  "built_from": {
+    "comparison.json": "76ccdf5452818f139c1f2030d623ad27a7ebe409180a0435428ebc70b263920d",
+    "thumbnails.json": "9f1778b416893348646ef8e85bfc2d82f141234eed1025d4b299bd60bbaacd92"
+  },
+  "output_sha256": "87b39db3a28c242a4993f3fbde40afcea4993e4fdbe615a5c5e843c7ac49132d",
+  "output_bytes": 300367,
+  "offline": true,
+  "script_dependencies": [],
+  "scope": "fixed Digits [0,1,2], shared train-only PCA98 and Euclidean-orthonormal 2D learned subspaces; separate from round2 results",
+  "query_id": 56,
+  "train": 179,
+  "test": 162
+}

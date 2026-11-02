@@ -1,0 +1,37 @@
+{
+  "scope": "synthetic integration fixture only, not measured gait performance",
+  "period": 12,
+  "cycles_per_sequence": 4,
+  "gallery_sequences": 24,
+  "probe_sequences": 12,
+  "training_cycle_images": 96,
+  "seed": 16,
+  "mmfa_ridge": 1e-06,
+  "rows": [
+    {
+      "method": "Raw",
+      "rank1_count": 12,
+      "probe_sequences": 12
+    },
+    {
+      "method": "PCA",
+      "rank1_count": 12,
+      "probe_sequences": 12
+    },
+    {
+      "method": "MFA-1",
+      "rank1_count": 12,
+      "probe_sequences": 12
+    },
+    {
+      "method": "MFA-2",
+      "rank1_count": 12,
+      "probe_sequences": 12
+    },
+    {
+      "method": "MMFA",
+      "rank1_count": 12,
+      "probe_sequences": 12
+    }
+  ]
+}

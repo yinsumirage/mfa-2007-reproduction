@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "Please cite the original paper when discussing the algorithm."
+title: "MFA 2007: independent CPU reproduction"
+type: software
+authors:
+  - name: yinsumirage
+repository-code: "https://github.com/yinsumirage/mfa-2007-reproduction"
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Xu
+      given-names: Dong
+    - family-names: Yan
+      given-names: Shuicheng
+    - family-names: Tao
+      given-names: Dacheng
+    - family-names: Lin
+      given-names: Stephen
+    - family-names: Zhang
+      given-names: Hong-Jiang
+  title: "Marginal Fisher Analysis and Its Variants for Human Gait Recognition and Content-Based Image Retrieval"
+  journal: "IEEE Transactions on Image Processing"
+  year: 2007
+  volume: 16
+  issue: 11
+  start: 2811
+  end: 2821
+  doi: "10.1109/TIP.2007.906769"

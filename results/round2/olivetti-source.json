@@ -1,0 +1,11 @@
+{
+  "source": "scikit-learn fetch_olivetti_faces",
+  "origin": "https://ndownloader.figshare.com/files/5976027",
+  "attribution": "AT&T Laboratories Cambridge / Olivetti Research Laboratory",
+  "shape": [
+    400,
+    64,
+    64
+  ],
+  "sha256": "ddd9b4c5a24f7f96f3aa7efd3fe407e0d3c171090cc51a02d87f7ea98212bbf5"
+}

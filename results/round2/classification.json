@@ -1,0 +1,763 @@
+{
+  "config": {
+    "seeds": [
+      16,
+      17,
+      18
+    ],
+    "k1": 3,
+    "k2": 50,
+    "ndim": 16,
+    "matrix_shape": [
+      4,
+      4
+    ],
+    "iterations": 10,
+    "pca_energy": 0.98,
+    "blas_threads": 1,
+    "selection": "fixed in round2-plan.md before results; no hyperparameter sweep"
+  },
+  "rows": [
+    {
+      "dataset": "Digits",
+      "seed": 16,
+      "method": "Raw pixels",
+      "ndim": 64,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 527,
+      "accuracy": 0.975925925925926,
+      "fit_seconds": 1.25030055642128e-07,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 16,
+      "method": "PCA",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 523,
+      "accuracy": 0.9685185185185186,
+      "fit_seconds": 0.002975541166961193,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 16,
+      "method": "LDA",
+      "ndim": 9,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 503,
+      "accuracy": 0.9314814814814815,
+      "fit_seconds": 0.0024002089630812407,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 16,
+      "method": "MFA-1",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 523,
+      "accuracy": 0.9685185185185186,
+      "fit_seconds": 0.03041808307170868,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 16,
+      "method": "MFA-2",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 476,
+      "accuracy": 0.8814814814814815,
+      "fit_seconds": 0.028041667072102427,
+      "diagnostic_only": false,
+      "converged": true,
+      "spectral_residual": 2.0670268898987738e-18,
+      "iterations": 6,
+      "retained_rank": 59
+    },
+    {
+      "dataset": "Digits",
+      "seed": 16,
+      "method": "MMFA",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 508,
+      "accuracy": 0.9407407407407408,
+      "fit_seconds": 0.10500041604973376,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 16,
+      "method": "MFA-2 shared PCA",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 519,
+      "accuracy": 0.9611111111111111,
+      "fit_seconds": 0.05165749997831881,
+      "diagnostic_only": true,
+      "converged": true,
+      "spectral_residual": 1.3493871554914903e-17,
+      "iterations": 5,
+      "retained_rank": 36
+    },
+    {
+      "dataset": "Digits",
+      "seed": 17,
+      "method": "Raw pixels",
+      "ndim": 64,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 530,
+      "accuracy": 0.9814814814814815,
+      "fit_seconds": 9.59029421210289e-07,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 17,
+      "method": "PCA",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 530,
+      "accuracy": 0.9814814814814815,
+      "fit_seconds": 0.0013098751660436392,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 17,
+      "method": "LDA",
+      "ndim": 9,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 511,
+      "accuracy": 0.9462962962962963,
+      "fit_seconds": 0.002234166953712702,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 17,
+      "method": "MFA-1",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 525,
+      "accuracy": 0.9722222222222222,
+      "fit_seconds": 0.026196541963145137,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 17,
+      "method": "MFA-2",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 424,
+      "accuracy": 0.7851851851851852,
+      "fit_seconds": 0.02866166620515287,
+      "diagnostic_only": false,
+      "converged": true,
+      "spectral_residual": 1.5977252854619468e-18,
+      "iterations": 7,
+      "retained_rank": 59
+    },
+    {
+      "dataset": "Digits",
+      "seed": 17,
+      "method": "MMFA",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 518,
+      "accuracy": 0.9592592592592593,
+      "fit_seconds": 0.10790116619318724,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 17,
+      "method": "MFA-2 shared PCA",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 528,
+      "accuracy": 0.9777777777777777,
+      "fit_seconds": 0.026758624939247966,
+      "diagnostic_only": true,
+      "converged": true,
+      "spectral_residual": 7.480212627445965e-18,
+      "iterations": 5,
+      "retained_rank": 36
+    },
+    {
+      "dataset": "Digits",
+      "seed": 18,
+      "method": "Raw pixels",
+      "ndim": 64,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 531,
+      "accuracy": 0.9833333333333333,
+      "fit_seconds": 1.2079253792762756e-06,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 18,
+      "method": "PCA",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 523,
+      "accuracy": 0.9685185185185186,
+      "fit_seconds": 0.0016129999421536922,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 18,
+      "method": "LDA",
+      "ndim": 9,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 514,
+      "accuracy": 0.9518518518518518,
+      "fit_seconds": 0.001714250072836876,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 18,
+      "method": "MFA-1",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 522,
+      "accuracy": 0.9666666666666667,
+      "fit_seconds": 0.026673750020563602,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 18,
+      "method": "MFA-2",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 423,
+      "accuracy": 0.7833333333333333,
+      "fit_seconds": 0.032365582883358,
+      "diagnostic_only": false,
+      "converged": true,
+      "spectral_residual": 3.7747601927585524e-18,
+      "iterations": 7,
+      "retained_rank": 59
+    },
+    {
+      "dataset": "Digits",
+      "seed": 18,
+      "method": "MMFA",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 520,
+      "accuracy": 0.9629629629629629,
+      "fit_seconds": 0.12457208405248821,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Digits",
+      "seed": 18,
+      "method": "MFA-2 shared PCA",
+      "ndim": 16,
+      "train_count": 600,
+      "test_count": 540,
+      "correct": 517,
+      "accuracy": 0.9574074074074074,
+      "fit_seconds": 0.028316000010818243,
+      "diagnostic_only": true,
+      "converged": true,
+      "spectral_residual": 4.3256413125618765e-18,
+      "iterations": 5,
+      "retained_rank": 36
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 16,
+      "method": "Raw pixels",
+      "ndim": 1024,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 146,
+      "accuracy": 0.9125,
+      "fit_seconds": 1.084059476852417e-06,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 16,
+      "method": "PCA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 144,
+      "accuracy": 0.9,
+      "fit_seconds": 0.01578487502411008,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 16,
+      "method": "LDA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 156,
+      "accuracy": 0.975,
+      "fit_seconds": 0.021409417036920786,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 16,
+      "method": "MFA-1",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 154,
+      "accuracy": 0.9625,
+      "fit_seconds": 0.03260933398269117,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 16,
+      "method": "MFA-2",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 152,
+      "accuracy": 0.95,
+      "fit_seconds": 0.06051537487655878,
+      "diagnostic_only": false,
+      "converged": true,
+      "spectral_residual": 1.0168937745165454e-18,
+      "iterations": 8,
+      "retained_rank": 239
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 16,
+      "method": "MMFA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 149,
+      "accuracy": 0.93125,
+      "fit_seconds": 0.09813954192213714,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 16,
+      "method": "MFA-2 shared PCA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 154,
+      "accuracy": 0.9625,
+      "fit_seconds": 0.0369675001129508,
+      "diagnostic_only": true,
+      "converged": true,
+      "spectral_residual": 3.4592640651171185e-18,
+      "iterations": 7,
+      "retained_rank": 120
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 17,
+      "method": "Raw pixels",
+      "ndim": 1024,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 149,
+      "accuracy": 0.93125,
+      "fit_seconds": 8.330680429935455e-07,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 17,
+      "method": "PCA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 143,
+      "accuracy": 0.89375,
+      "fit_seconds": 0.011662042001262307,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 17,
+      "method": "LDA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 152,
+      "accuracy": 0.95,
+      "fit_seconds": 0.013207667041569948,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 17,
+      "method": "MFA-1",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 147,
+      "accuracy": 0.91875,
+      "fit_seconds": 0.026506457943469286,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 17,
+      "method": "MFA-2",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 145,
+      "accuracy": 0.90625,
+      "fit_seconds": 0.05938945896923542,
+      "diagnostic_only": false,
+      "converged": true,
+      "spectral_residual": 4.00625459673074e-18,
+      "iterations": 8,
+      "retained_rank": 239
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 17,
+      "method": "MMFA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 142,
+      "accuracy": 0.8875,
+      "fit_seconds": 0.09752299985848367,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 17,
+      "method": "MFA-2 shared PCA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 150,
+      "accuracy": 0.9375,
+      "fit_seconds": 0.03691237512975931,
+      "diagnostic_only": true,
+      "converged": true,
+      "spectral_residual": 5.127037455750307e-18,
+      "iterations": 7,
+      "retained_rank": 120
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 18,
+      "method": "Raw pixels",
+      "ndim": 1024,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 143,
+      "accuracy": 0.89375,
+      "fit_seconds": 8.328352123498917e-07,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 18,
+      "method": "PCA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 138,
+      "accuracy": 0.8625,
+      "fit_seconds": 0.01132166595198214,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 18,
+      "method": "LDA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 154,
+      "accuracy": 0.9625,
+      "fit_seconds": 0.013197457883507013,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 18,
+      "method": "MFA-1",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 151,
+      "accuracy": 0.94375,
+      "fit_seconds": 0.026517875026911497,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 18,
+      "method": "MFA-2",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 147,
+      "accuracy": 0.91875,
+      "fit_seconds": 0.06056366697885096,
+      "diagnostic_only": false,
+      "converged": true,
+      "spectral_residual": 6.304192972730258e-18,
+      "iterations": 8,
+      "retained_rank": 239
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 18,
+      "method": "MMFA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 142,
+      "accuracy": 0.8875,
+      "fit_seconds": 0.09659837512299418,
+      "diagnostic_only": false
+    },
+    {
+      "dataset": "Olivetti",
+      "seed": 18,
+      "method": "MFA-2 shared PCA",
+      "ndim": 16,
+      "train_count": 240,
+      "test_count": 160,
+      "correct": 151,
+      "accuracy": 0.94375,
+      "fit_seconds": 0.035863957833498716,
+      "diagnostic_only": true,
+      "converged": true,
+      "spectral_residual": 9.696100893797675e-18,
+      "iterations": 7,
+      "retained_rank": 120
+    }
+  ],
+  "summary": [
+    {
+      "dataset": "Digits",
+      "method": "Raw pixels",
+      "mean_accuracy": 0.9802469135802468,
+      "sd_accuracy": 0.0038549370360483506,
+      "mean_fit_seconds": 7.639949520428976e-07,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 64
+    },
+    {
+      "dataset": "Digits",
+      "method": "PCA",
+      "mean_accuracy": 0.9728395061728395,
+      "sd_accuracy": 0.00748417015616181,
+      "mean_fit_seconds": 0.0019661387583861747,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Digits",
+      "method": "LDA",
+      "mean_accuracy": 0.9432098765432099,
+      "sd_accuracy": 0.010530075376069127,
+      "mean_fit_seconds": 0.002116208663210273,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 9
+    },
+    {
+      "dataset": "Digits",
+      "method": "MFA-1",
+      "mean_accuracy": 0.9691358024691358,
+      "sd_accuracy": 0.0028287504289850724,
+      "mean_fit_seconds": 0.02776279168513914,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Digits",
+      "method": "MFA-2",
+      "mean_accuracy": 0.8166666666666668,
+      "sd_accuracy": 0.056138912560089356,
+      "mean_fit_seconds": 0.02968963872020443,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Digits",
+      "method": "MMFA",
+      "mean_accuracy": 0.9543209876543209,
+      "sd_accuracy": 0.011905741680238181,
+      "mean_fit_seconds": 0.11249122209846973,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Digits",
+      "method": "MFA-2 shared PCA",
+      "mean_accuracy": 0.9654320987654321,
+      "sd_accuracy": 0.010850861624226498,
+      "mean_fit_seconds": 0.03557737497612834,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Olivetti",
+      "method": "Raw pixels",
+      "mean_accuracy": 0.9125,
+      "sd_accuracy": 0.01874999999999999,
+      "mean_fit_seconds": 9.166542440652847e-07,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 1024
+    },
+    {
+      "dataset": "Olivetti",
+      "method": "PCA",
+      "mean_accuracy": 0.8854166666666666,
+      "sd_accuracy": 0.020090939085401983,
+      "mean_fit_seconds": 0.01292286099245151,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Olivetti",
+      "method": "LDA",
+      "mean_accuracy": 0.9624999999999999,
+      "sd_accuracy": 0.012500000000000011,
+      "mean_fit_seconds": 0.01593818065399925,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Olivetti",
+      "method": "MFA-1",
+      "mean_accuracy": 0.9416666666666668,
+      "sd_accuracy": 0.021949278651776573,
+      "mean_fit_seconds": 0.028544555651023984,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Olivetti",
+      "method": "MFA-2",
+      "mean_accuracy": 0.9249999999999999,
+      "sd_accuracy": 0.022534695471649914,
+      "mean_fit_seconds": 0.060156166941548385,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Olivetti",
+      "method": "MMFA",
+      "mean_accuracy": 0.9020833333333332,
+      "sd_accuracy": 0.025259074277046167,
+      "mean_fit_seconds": 0.09742030563453834,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    },
+    {
+      "dataset": "Olivetti",
+      "method": "MFA-2 shared PCA",
+      "mean_accuracy": 0.9479166666666666,
+      "sd_accuracy": 0.013010412496663347,
+      "mean_fit_seconds": 0.03658127769206961,
+      "seeds": [
+        16,
+        17,
+        18
+      ],
+      "ndim": 16
+    }
+  ],
+  "scope": "replacement image data; not USF benchmark reproduction",
+  "dataset_sha256": {
+    "Digits": "5889d26819cf830d070975af3c711419825fa0a078137b3d80b8e7d06bd58da0",
+    "Olivetti": "efc78f02fda5fed3d8dfa56822c5e6875474b855f495bc1fc3b07ba319206866"
+  }
+}

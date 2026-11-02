@@ -1,0 +1,55 @@
+{
+  "downloaded_on": "2026-10-28",
+  "repositories": [
+    {
+      "directory": "third_party/rdimtools",
+      "remote": "https://github.com/kisungyou/Rdimtools.git",
+      "commit": "09f56cab121155bf9544e4665a764465861ecb49",
+      "checkout": "sparse, shallow clone",
+      "scope": [
+        "R",
+        "src",
+        "repository root files"
+      ],
+      "working_tree_clean": true,
+      "checked_out_files": 210,
+      "checked_out_bytes": 1066245,
+      "license": "MIT",
+      "executed": true,
+      "execution_scope": "Original aux.nbdlogical helper sourced and executed under R 4.5.2; full do.mfa/maotai NOT executed"
+    },
+    {
+      "directory": "third_party/mfa-matlab-reference",
+      "remote": "https://github.com/nz0001na/Face_dynamics_ADOS.git",
+      "commit": "1bb12e7392e13929cc8ad8b306af11af3fdc551c",
+      "checkout": "sparse, shallow clone",
+      "scope": [
+        "README.md",
+        "feature_extraction/MFA; parent-level files excluded by non-cone sparse patterns"
+      ],
+      "working_tree_clean": true,
+      "checked_out_files": 11,
+      "checked_out_bytes": 60833,
+      "license": "No repository-wide license found in the checked-out root; preserve source attribution; local reading copy",
+      "executed": true,
+      "execution_scope": "Original MFA.m and LGE.m executed under Octave 10.3.0; matched graph/PCA and biased scatter comparisons"
+    },
+    {
+      "directory": "third_party/multiple-mfa-python",
+      "remote": "https://github.com/XLearning-SCU/2018-TIE-MMFA.git",
+      "commit": "3032fbd9f2ae7ad080cc1a0d394a4195f6558242",
+      "checkout": "sparse, shallow clone",
+      "scope": [
+        "repository root files; data directory excluded"
+      ],
+      "working_tree_clean": true,
+      "checked_out_files": 8,
+      "checked_out_bytes": 163225,
+      "license": "MIT",
+      "executed": true,
+      "execution_scope": "Original MMFA function executed with pca_op=0 and runtime np.mat=np.asmatrix compatibility alias; source unchanged"
+    }
+  ],
+  "python_ast_check": "Historical check on 2026-10-28 passed; numerical execution scope updated separately on 2026-10-29",
+  "execution_updated_on": "2026-10-29"
+}

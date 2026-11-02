@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-03",
+  "paper": {
+    "doi": "10.1109/TIP.2007.906769",
+    "graph_definition_pdf_page": 3,
+    "solver_names_pdf_page": 7
+  },
+  "classification": {
+    "k1": 3,
+    "k2": 50,
+    "seeds": [
+      16,
+      17,
+      18
+    ],
+    "output_dim": 16
+  },
+  "original_benchmarks_reproduced": false,
+  "source_equivalence": {
+    "mfa.py": "87f93683d539e5e782f43292859d115a252f1218d9a7de0f2b8f0dbbd2cd0ed7",
+    "biased.py": "2aa3e0ed418cc9dc63fc25094b91a59b35399b06e31cd0f500b1c139cc952e2c",
+    "gait.py": "5b925911cf04bdbd45223f65ac342241224f6f5055df5454a41eefa7591e4a94",
+    "retrieval.py": "6cf0bfe818f8625e5866123e424d64b49e2d63a43fc7f243782c6a72a96560e4",
+    "retrieval_features.py": "bb36ee8db63614d7de935ec0a56c4255964a43496f1e9cbb3d48991dc54e79a1"
+  },
+  "export_adaptations": {
+    "code/check_paper_contract.py": "Uses DOI and shipped manifest instead of requiring the local licensed paper PDF; reports to stdout.",
+    "code/visual_comparison.py": "Exports visual-comparison figures to figures/ instead of slides/assets/comparison/."
+  },
+  "algorithm_files_sha256": {
+    "code/biased.py": "2aa3e0ed418cc9dc63fc25094b91a59b35399b06e31cd0f500b1c139cc952e2c",
+    "code/check_paper_contract.py": "6ee133f5f5c76ca60b7762307338d3badc71cf649e70a03433a5d850ab4e174b",
+    "code/gait.py": "5b925911cf04bdbd45223f65ac342241224f6f5055df5454a41eefa7591e4a94",
+    "code/mfa.py": "87f93683d539e5e782f43292859d115a252f1218d9a7de0f2b8f0dbbd2cd0ed7",
+    "code/prepare_data.py": "c3eee48804833c4c1c44aafda0de89204ffbca43c9d9d2a4d30e7bdee3cd0666",
+    "code/reference_checks/compare_biased.py": "200eae0afbfd55d05151ec494ee3bdca1ba72b8a7eb4d5e342e0207dd140aa6d",
+    "code/reference_checks/compare_upstreams.py": "0cb2d722148d824d55d6f2d085898a068469aa5ed208de0f8902c067ca1f6400",
+    "code/retrieval.py": "6cf0bfe818f8625e5866123e424d64b49e2d63a43fc7f243782c6a72a96560e4",
+    "code/retrieval_features.py": "bb36ee8db63614d7de935ec0a56c4255964a43496f1e9cbb3d48991dc54e79a1",
+    "code/run_all.py": "92979a2414f979f208fdd75bf5075fab2a78192bb7681b83b5dec6e93b056706",
+    "code/run_classification_round2.py": "fdcd4dfc29cfdb156e8687606b250a70890a8d5be1c7e997fba8c4b62590a401",
+    "code/run_experiment.py": "e97b429ff4e694697ee1e250b02b0bf8836797eabc713b3433ec80c6a2b7dc08",
+    "code/run_gait_integration.py": "27db9ac766529c2c3e94c12506006b58d6a095c912d1cd4faf5742b1169ea7ee",
+    "code/run_heldout_retrieval.py": "8590f4ae058a66cba8e322c368f5349dfa126491c9ca7afe056096c7741fd5b1",
+    "code/run_matched_feedback.py": "ccec56eb764d6e0223356833eb3fbf0435015522b6fca8c492af26dd41ab0707",
+    "code/run_retrieval_round2.py": "96964ff8a18ad8ac9dc09294965e22fac5ae8eb58bd26b29f4a71c4e0d85345a",
+    "code/test_mfa.py": "02346047e6253637454d7792a52f46351dfbeb7aa70f63bac96c2de9d4fc884b",
+    "code/test_retrieval.py": "66e6e9bd25a68fb8b8c9067bcc3b263b9187deae48e423ba83614f1003873541",
+    "code/test_round2.py": "250f5d1a5a9206ace0113ca286ae6cb4c06d578ed8c39a2fa1e1f2cbd988d4f1",
+    "code/visual_comparison.py": "7b9cd5869eab333a4ff39f97a09afa185371e6c1c4d25294c755ebbc91756173"
+  },
+  "result_files_sha256": {
+    "results/digits_results.json": "dfeea6a97ade8d302a1713132f9c4e3a6c4e433edc84118863c0eaa55af0cf0b",
+    "results/round2/classification.json": "185c2e83be7eb340fb564b9204730b4447d422e63c5a270390ae8955b48e6472",
+    "results/round2/classification.png": "6b8bc77a27593772ecb6e91830dc17a8ea66191f1fac4eb9a434d571a693092c",
+    "results/round2/classification_predictions.npz": "e73c5ae40f034be109394596a641460ca93bd9a7cb87ca525cff66db21fc7e65",
+    "results/round2/classification_splits.npz": "cdb2ee84ac811698b2a8b82a882d7f880e0d57a85437df2c22fbf68544047fdc",
+    "results/round2/corel1k-source.json": "5463c7e1454fcfaee487b7e1f93b9b6e3f5c051ce169fb0bcf68d89fb3ac290c",
+    "results/round2/gait_integration.json": "1592360686c894d2ed0a6cae69d3571b56d8b48e7bb1225debe52c4162dc39d4",
+    "results/round2/gait_pipeline.png": "fd95a039540916d1d3277163965a5a6f9e12219bc42a4f4a5c14c49fec8fcce0",
+    "results/round2/heldout_retrieval.json": "4570827cd4262f58307a7e71c076f28163e339a98a96042431b097503f11f78c",
+    "results/round2/heldout_retrieval.png": "54b4e46772a89a9dda5d9cb8b44f87d920d3293fedc7c1897392a9ec83c2f92c",
+    "results/round2/heldout_retrieval_split.npz": "5370329ee15a9315e99a05292347a2542d61c48caf5f91a6cb45b520f7d19ea9",
+    "results/round2/matched_feedback.json": "e096fbf6af7bc3e299ba4ee2a9bcd2fb1631827570d28b108383c1b12e399b28",
+    "results/round2/olivetti-source.json": "d37c8667fa0134aaafa3c94cff8a6167b2f33ba87f14ef9112b3bd6776f9f8cf",
+    "results/round2/retrieval.json": "1784553cc9b7c41ffd6df1c3a45d18ba59b87b300aa60bf65c865671fa0ef8e8",
+    "results/round2/retrieval_including_seen_diagnostic.json": "587bf47e627d927dcb2a20ed87c435675b18d76dcac48c6827daa8982cd2e8b9",
+    "results/round2/retrieval_plan.json": "0dddddd553178fa7c5d5e531c49cc195b332d49d376558034d2e1713217c3611",
+    "results/round2/retrieval_precision.png": "da4829d49e0e77a8b8f3e1e29c5056c566ad727f1f78f0341150487b44cc946c",
+    "results/visual_comparison/comparison.json": "76ccdf5452818f139c1f2030d623ad27a7ebe409180a0435428ebc70b263920d",
+    "results/visual_comparison/plan.json": "69c0cf8433a1950c21ec29400ce74fb6824e8611233e4a9abcf4de43dd2c3790",
+    "results/visual_comparison/projections.npz": "8c2e653cc0410950ce6cf44ab704c3255d30837ba304b578d1c618c08aacc57c",
+    "results/visual_comparison/thumbnails.json": "9f1778b416893348646ef8e85bfc2d82f141234eed1025d4b299bd60bbaacd92"
+  }
+}

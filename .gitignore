@@ -1,0 +1,14 @@
+.venv/
+code/.data-cache/
+code/.reference-env/
+code/.mpl-cache/
+code/third_party/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.log
+*.egg-info/
+.pytest_cache/
+.env
+.env.*
+!.env.example

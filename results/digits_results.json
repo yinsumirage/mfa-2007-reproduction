@@ -1,0 +1,187 @@
+{
+  "config": {
+    "seed": 16,
+    "train_size": 600,
+    "test_fraction": 0.3,
+    "ndim": 16,
+    "k1": 3,
+    "k2": 50,
+    "matrix_shape": [
+      4,
+      4
+    ],
+    "matrix_iterations": 10,
+    "mfa2_max_iter": 100,
+    "mfa2_tol": 1e-10,
+    "pca_energy": 0.98,
+    "ged_ridge": 0.0,
+    "blas_threads": 1
+  },
+  "dataset": "sklearn load_digits; replacement dataset, not USF/Corel",
+  "dataset_shape": [
+    1797,
+    64
+  ],
+  "dataset_sha256": "f6d9e39f37dc45d327f6db33428ee58970ccceabb2535a5c179de35886b70443",
+  "train_indices_sha256": "c9a07a1575da183ad1f0c7d8071746605cabc3b864c1ca2986336c629059ff11",
+  "test_indices_sha256": "cc761b8a5fbacac69b47cba68a7a7398189ae60ab4671632fec6f489b950b83a",
+  "rows": [
+    {
+      "method": "Raw pixels",
+      "output_dim": 64,
+      "test_accuracy": 0.975925925925926,
+      "correct": 527,
+      "test_count": 540,
+      "fit_seconds": 1.25030055642128e-07,
+      "train_objective": null
+    },
+    {
+      "method": "PCA",
+      "output_dim": 16,
+      "test_accuracy": 0.9685185185185186,
+      "correct": 523,
+      "test_count": 540,
+      "fit_seconds": 0.0017653340473771095,
+      "train_objective": null
+    },
+    {
+      "method": "MFA-1",
+      "output_dim": 16,
+      "test_accuracy": 0.9685185185185186,
+      "correct": 523,
+      "test_count": 540,
+      "fit_seconds": 0.028076665941625834,
+      "train_objective": 1.0607681008051033,
+      "pca_rank": 36
+    },
+    {
+      "method": "MFA-2",
+      "output_dim": 16,
+      "test_accuracy": 0.8814814814814815,
+      "correct": 476,
+      "test_count": 540,
+      "fit_seconds": 0.026837666053324938,
+      "train_objective": 0.5461481650736872,
+      "iterations": 6,
+      "converged": true,
+      "spectral_residual": 2.0670268898987738e-18,
+      "retained_rank": 59
+    },
+    {
+      "method": "MMFA",
+      "output_dim": 16,
+      "test_accuracy": 0.9407407407407408,
+      "correct": 508,
+      "test_count": 540,
+      "fit_seconds": 0.10288470797240734,
+      "train_objective": 1.3256829582293608
+    }
+  ],
+  "solver_only_diagnostic": {
+    "initial_lambda": 0.4839411911555038,
+    "final_lambda": 0.6467685455955906,
+    "initial_objective": 1.066366778187046,
+    "final_objective": 0.5461481650736874,
+    "converged": true,
+    "spectral_residual": 2.0670268898987738e-18
+  },
+  "mfa2_history": [
+    {
+      "iteration": 0,
+      "lambda": 0.34176679535327137,
+      "within_between": 1.9259717842581452
+    },
+    {
+      "iteration": 1,
+      "lambda": 0.5195637754840537,
+      "within_between": 0.9246915339090869,
+      "normalized_spectral_residual": 0.011740276046003056
+    },
+    {
+      "iteration": 2,
+      "lambda": 0.6195565134639266,
+      "within_between": 0.6140577627196954,
+      "normalized_spectral_residual": 0.002031579774768474
+    },
+    {
+      "iteration": 3,
+      "lambda": 0.6452443389215252,
+      "within_between": 0.5498005014215553,
+      "normalized_spectral_residual": 0.00010719819291529229
+    },
+    {
+      "iteration": 4,
+      "lambda": 0.6467627446276417,
+      "within_between": 0.546162032842084,
+      "normalized_spectral_residual": 4.064262170292834e-07
+    },
+    {
+      "iteration": 5,
+      "lambda": 0.6467685455102676,
+      "within_between": 0.5461481652776586,
+      "normalized_spectral_residual": 5.97779706613076e-12
+    },
+    {
+      "iteration": 6,
+      "lambda": 0.6467685455955906,
+      "within_between": 0.5461481650736876,
+      "normalized_spectral_residual": 2.0670268898987738e-18
+    }
+  ],
+  "mmfa_history": [
+    {
+      "iteration": 1,
+      "within_between": 1.136312224029709
+    },
+    {
+      "iteration": 2,
+      "within_between": 1.2900640722359522
+    },
+    {
+      "iteration": 3,
+      "within_between": 1.1940718080593107
+    },
+    {
+      "iteration": 4,
+      "within_between": 1.2101012989660267
+    },
+    {
+      "iteration": 5,
+      "within_between": 1.250608484208726
+    },
+    {
+      "iteration": 6,
+      "within_between": 1.3225624855331275
+    },
+    {
+      "iteration": 7,
+      "within_between": 1.3285670652690924
+    },
+    {
+      "iteration": 8,
+      "within_between": 1.3285014581082795
+    },
+    {
+      "iteration": 9,
+      "within_between": 1.3111680304348203
+    },
+    {
+      "iteration": 10,
+      "within_between": 1.3256829582293608
+    }
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-26.5-arm64-arm-64bit",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1"
+  },
+  "limitations": [
+    "Single split; no significance estimate",
+    "Digits replaces original datasets",
+    "MFA-1/2 preprocessing differs as documented",
+    "No GPU used",
+    "No selection using test accuracy"
+  ]
+}

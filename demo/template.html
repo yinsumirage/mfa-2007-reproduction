@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>同一批手写数字，四种投影</title>
+<style>
+:root{color-scheme:light dark;--paper:light-dark(#f8f7f3,#14232b);--ink:light-dark(#152b3a,#e6eeed);--muted:light-dark(#5d717b,#afc0c5);--line:light-dark(#c9d4d4,#466069);--soft:light-dark(#e7edeb,#233c44);--strong:light-dark(#007f89,#70d9d2);--c0:light-dark(#152b3a,#b6c9dc);--c1:light-dark(#007f89,#70d9d2);--c2:light-dark(#d45a47,#f6957e);--active-ink:light-dark(#fff,#102831);--focus:light-dark(#214d8e,#b9d4ff);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0}button,select{font:inherit;color:inherit}button,select{border:1px solid var(--line);background:transparent;border-radius:4px;min-height:38px;padding:7px 12px}button:hover,select:hover{background:var(--soft)}button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}button:disabled{opacity:.45}button{touch-action:manipulation}a{color:var(--strong)}.app{max-width:1320px;margin:auto;padding:28px 32px 22px}.heading{display:flex;justify-content:space-between;gap:16px;align-items:start}.eyebrow{font-size:.83rem;color:var(--muted);letter-spacing:.07em;margin-bottom:7px}.heading h1{margin:0;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:600;line-height:1.25}.sub{margin:10px 0 0;line-height:1.55;color:var(--muted)}.plain{white-space:nowrap}.toolbar{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin:23px 0 17px}.method-buttons{display:flex;gap:6px;flex-wrap:wrap}.method-buttons button{min-width:82px}.field{display:flex;gap:8px;align-items:center}.field label{white-space:nowrap;color:var(--muted);font-size:.9rem}.field select{max-width:100%}.legend{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.legend button{display:flex;align-items:center;gap:7px;border:0;min-height:36px;padding:4px 0;background:transparent;color:var(--ink)}.legend button[aria-pressed="false"]{opacity:.35}.symbol{width:14px;height:14px;display:inline-block;background:var(--s);flex-shrink:0}.symbol.circle{border-radius:50%}.symbol.square{transform:scale(.9)}.symbol.triangle{clip-path:polygon(50% 0,100% 100%,0 100%)}.method-line{display:flex;gap:20px;justify-content:space-between;align-items:center;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.method-goal{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.method-name{font-weight:600;font-size:1.06rem}.formula{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;font-size:1.18rem;white-space:normal}.score{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap;font-size:.91rem}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 312px;gap:25px;margin-top:18px}.plot-wrap{position:relative;min-width:0}.plot-head{display:flex;align-items:center;gap:16px;justify-content:space-between;min-height:31px}.plot-head span{color:var(--muted);font-size:.85rem}.plot{display:block;width:100%;height:425px;touch-action:manipulation;overflow:visible}.plot text{font-family:inherit;fill:var(--ink);font-size:12px}.plot .tick{fill:var(--muted)}.plot .grid{stroke:var(--line);stroke-opacity:.45;stroke-width:.7}.plot .frame{stroke:var(--line);fill:none;stroke-width:1}.plot .axis-label{font-size:13px;fill:var(--muted)}.plot .selected{fill:none;stroke:var(--ink);stroke-width:2.5}.plot-note{font-size:.83rem;color:var(--muted);margin:2px 0 0;line-height:1.55}.sample-panel{border-left:1px solid var(--line);padding-left:23px;min-width:0}.sample-panel h2{font-size:1rem;margin:0 0 11px;font-weight:500}.selected-top{display:flex;gap:17px;align-items:center}.digit{image-rendering:pixelated;object-fit:contain;background:#000;display:block}.large-digit{width:100px;height:100px}.sample-meta{line-height:1.7;font-variant-numeric:tabular-nums}.sample-meta strong{font-weight:600}.text-muted{color:var(--muted)}.coords{font-family:"Consolas","SFMono-Regular",monospace;font-size:1rem;white-space:normal;overflow-wrap:anywhere;margin:17px 0 6px;font-variant-numeric:tabular-nums}.prediction{margin:0;line-height:1.5}.prediction .match{color:var(--strong);font-weight:600}.flow-title{margin:23px 0 9px;font-size:.92rem}.neighbors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.neighbor{padding:0;border:0;background:transparent;text-align:left;font-size:.75rem;line-height:1.45;min-width:0}.neighbor:hover{background:transparent;text-decoration:underline}.neighbor img{width:100%;max-width:70px;aspect-ratio:1}.neighbor .ntext{display:block;margin-top:3px;overflow-wrap:anywhere}.neighbor .good{color:var(--strong)}.neighbor .bad{color:var(--c1)}.sample-picker{margin-top:18px;display:flex;flex-direction:column;gap:5px}.sample-picker label{font-size:.83rem;color:var(--muted)}.sample-picker select{width:100%;font-size:.87rem}.status{min-height:23px;font-size:.85rem;color:var(--muted);line-height:1.5}.context{margin:22px 0 0;padding-top:15px;border-top:1px solid var(--line);font-size:.87rem;color:var(--muted);line-height:1.7}.context p{margin:3px 0}.context strong{color:var(--ink);font-weight:500}details{margin-top:14px}summary{font-size:.9rem;min-height:32px;display:list-item}table{border-collapse:collapse;width:100%;text-align:left;margin-top:8px;font-size:.88rem}th,td{padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}th{font-weight:500}td:nth-child(2){font-family:"Cambria Math","Times New Roman",serif;font-size:1rem;width:45%}td:first-child{width:14%;white-space:nowrap}.table-wrap{overflow-x:auto}.tooltip{position:absolute;display:none;pointer-events:none;z-index:5;max-width:250px;padding:9px 11px;background:var(--ink);color:var(--paper);border-radius:4px;font-size:.79rem;line-height:1.6;box-shadow:0 3px 15px #0002}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.small-screen-note{display:none}.fullscreen .app{max-width:1500px}button[aria-pressed="true"] .symbol{outline:0}.noscript{margin:24px;color:var(--c1)}
+@media(min-width:1450px){.plot{height:480px}.workspace{grid-template-columns:minmax(0,1fr) 340px}.large-digit{width:112px;height:112px}.sample-panel{padding-left:27px}.neighbors{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.neighbor img{max-width:79px}}
+@media(max-width:850px){.app{padding:22px 20px}.workspace{grid-template-columns:minmax(0,1fr)}.sample-panel{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 28px}.sample-panel h2,.selected-top,.coords,.prediction{grid-column:1}.sample-panel .flow-title{grid-column:2;grid-row:1;margin:0 0 9px}.neighbors{grid-column:2;grid-row:2/6;grid-template-columns:repeat(3,minmax(0,1fr))}.sample-picker{grid-column:1/3}.sample-panel .status{grid-column:1/3}.method-line{align-items:start}.score{white-space:normal;text-align:right}.plot{height:390px}}
+@media(max-width:560px){.app{padding:19px 14px}.heading{gap:8px}.heading h1{font-size:1.5rem}.heading .plain{font-size:.8rem;padding:5px 8px;min-height:34px}.sub{font-size:.87rem}.toolbar{gap:8px 20px;margin:17px 0 14px}.method-buttons{gap:5px;width:100%}.method-buttons button{min-width:0;flex:1;padding:7px 8px}.field select{max-width:170px}.legend{gap:16px}.method-line{display:block}.method-goal{gap:5px 12px}.formula{font-size:1.08rem}.score{text-align:left;margin-top:8px;font-size:.85rem}.workspace{margin-top:13px;gap:15px}.plot-head{align-items:start;gap:7px;line-height:1.5}.plot-head span{font-size:.76rem}.plot{height:340px}.sample-panel{display:block}.selected-top{gap:20px}.large-digit{width:95px;height:95px}.neighbors{grid-template-columns:repeat(6,minmax(0,1fr));gap:7px}.neighbor{font-size:.69rem}.sample-panel .flow-title{margin-top:19px}.context{font-size:.8rem}.table-wrap{font-size:.8rem}th,td{padding-right:14px;min-width:110px}td:nth-child(2){min-width:240px}.plot .axis-label{font-size:12px}.small-screen-note{display:inline}.plot-note{font-size:.77rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main class="app" id="mfa-demo">
+<header class="heading"><div><div class="eyebrow">COMP9501 · GROUP 16</div><h1>同一批手写数字，四种投影</h1><p class="sub" id="dataset-label">原图保留不变；切换方法，观察它们在二维空间中的位置与最近邻。</p></div><button id="fullscreen" class="plain" type="button">全屏演示</button></header>
+<div class="toolbar">
+ <div class="method-buttons" role="group" aria-label="投影方法"><button type="button" data-method="pca" aria-pressed="true">PCA</button><button type="button" data-method="lda" aria-pressed="false">LDA</button><button type="button" data-method="lpp" aria-pressed="false">LPP</button><button type="button" data-method="mfa" aria-pressed="false">MFA-1</button></div>
+ <div class="field"><label for="split">显示样本</label><select id="split"><option value="test" selected>测试集</option><option value="train">训练集</option><option value="both">训练＋测试</option></select></div>
+ <div class="legend" role="group" aria-label="显示的数字类别"><button type="button" data-class="0" aria-pressed="true"><span class="symbol circle" style="--s:var(--c0)" aria-hidden="true"></span>数字 0</button><button type="button" data-class="1" aria-pressed="true"><span class="symbol triangle" style="--s:var(--c1)" aria-hidden="true"></span>数字 1</button><button type="button" data-class="2" aria-pressed="true"><span class="symbol square" style="--s:var(--c2)" aria-hidden="true"></span>数字 2</button></div>
+</div>
+<div class="method-line"><div class="method-goal"><span class="method-name" id="method-goal"></span><span class="formula" id="method-formula"></span></div><div class="score" id="score"></div></div>
+<div class="workspace">
+ <section class="plot-wrap" aria-labelledby="plot-heading"><div class="plot-head"><strong id="plot-heading">二维投影</strong><span id="mark-key">空心：测试样本　实心：训练样本</span></div><svg id="plot" class="plot" role="img" aria-label="手写数字的二维投影。可点击一个点查看对应图片和最近邻。"><title>手写数字的二维投影</title><desc id="plot-description">三个数字类别，用颜色与形状区分。</desc></svg><div class="tooltip" role="tooltip" id="tooltip"></div><p class="plot-note">点击一个点查看原图。颜色和形状表示真实类别，× 表示 1-NN 错分。轴值为投影特征单位。</p></section>
+ <aside class="sample-panel" aria-labelledby="selected-heading"><h2 id="selected-heading">选中样本</h2><div class="selected-top"><img id="selected-image" class="digit large-digit" width="100" height="100" alt="选中手写数字"><div class="sample-meta" id="sample-meta"></div></div><p class="coords" id="coordinates"></p><p class="prediction" id="prediction"></p><h3 class="flow-title">最近的 6 张训练图片</h3><div class="neighbors" id="neighbors"></div><div class="sample-picker"><label for="sample-select">或用键盘选择样本</label><select id="sample-select" aria-label="选择当前显示范围内的样本"></select></div><p class="status" id="selection-status" aria-live="polite"></p></aside>
+</div>
+<div class="context"><p id="protocol"></p><p><strong>输出是两个坐标，而非一张生成图片。</strong>最近邻分类只使用训练集；测试标签只用于显示与评估。</p><p>统一训练集 PCA98 与正交子空间坐标。这是独立教学比较，不替代原有十类、16 维主实验。动画仅展示方法切换，不表示训练过程。</p></div>
+<details><summary>四种方法的公式与差别</summary><div class="table-wrap"><table><thead><tr><th>方法</th><th>目标或约束</th><th>保留什么</th></tr></thead><tbody><tr><td>PCA</td><td>max tr(WᵀSₜW), WᵀW = I</td><td>总体方差，不使用类别标签。</td></tr><tr><td>LDA</td><td>max tr[(WᵀS𝓌W)⁻¹(WᵀSᵦW)]</td><td>整体类别均值分离，使用标签。</td></tr><tr><td>LPP</td><td>min tr(WᵀXLXᵀW), WᵀXDXᵀW = I</td><td>无标签近邻图，L = D − G。</td></tr><tr><td>MFA-1</td><td>max tr[(WᵀAW)⁻¹(WᵀBW)]</td><td>A：同类邻居散度；B：异类 margin 散度。</td></tr></tbody></table></div><p class="plot-note">X 的每列是一个样本。此处 MFA-1 用广义特征向量近似路线；原始 Trace Ratio 与 MFA-2 的直接迭代在 PPT 中另行解释。</p></details>
+<noscript><p class="noscript">本演示需要浏览器启用 JavaScript。所有数据已内嵌，无需网络。</p></noscript>
+</main>
+<script id="comparison-data" type="application/json">__COMPARISON_DATA__</script>
+<script>
+(() => {
+'use strict';
+const root=document.getElementById('mfa-demo');
+const data=JSON.parse(document.getElementById('comparison-data').textContent);
+const byId=new Map(data.methods.map(m=>[m.id,m]));
+const meta={pca:{goal:'PCA · 保留总体方差',formula:'max tr(WᵀSₜW)'},lda:{goal:'LDA · 拉开整体类别均值',formula:'max tr[(WᵀS𝓌W)⁻¹(WᵀSᵦW)]'},lpp:{goal:'LPP · 保留无标签近邻',formula:'min tr(WᵀXLXᵀW)'},mfa:{goal:'MFA-1 · 同类邻居近，异类边界远',formula:'max tr[(WᵀAW)⁻¹(WᵀBW)]'}};
+const samples=[...data.train_ids.map((id,i)=>({id,label:data.train_labels[i],split:'train',index:i})),...data.test_ids.map((id,i)=>({id,label:data.test_labels[i],split:'test',index:i}))];
+const sampleMap=new Map(samples.map(s=>[String(s.id),s]));
+const state={method:'pca',split:'test',classes:new Set([0,1,2]),selected:String(data.query.id)};
+const svg=document.getElementById('plot'),tip=document.getElementById('tooltip'),picker=document.getElementById('sample-select');
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const NS='http://www.w3.org/2000/svg';let currentScreen=new Map(),targetScreen=new Map(),visible=[],raf=0,width=0,height=0,lastHover=null;
+const fmt=n=>Math.abs(n)<.0005?'0.000':n.toFixed(3), pct=n=>(100*n).toFixed(1)+'%';
+const classColor=n=>`var(--c${n})`;
+function pointCoordinates(s,m=byId.get(state.method)){return (s.split==='train'?m.train_coordinates:m.test_coordinates)[s.index];}
+function shown(s){return(state.split==='both'||state.split===s.split)&&state.classes.has(s.label);}
+function node(tag,attrs={},text){const e=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));if(text!==undefined)e.textContent=text;return e;}
+function getNeighbors(s,m=byId.get(state.method)){
+ const xy=pointCoordinates(s,m);
+ return data.train_ids.map((id,i)=>({id,index:i,label:data.train_labels[i],distance:Math.hypot(xy[0]-m.train_coordinates[i][0],xy[1]-m.train_coordinates[i][1])})).filter(v=>v.id!==s.id).sort((a,b)=>a.distance-b.distance||a.id-b.id).slice(0,6);
+}
+function updateDetail(){
+ const s=sampleMap.get(state.selected),m=byId.get(state.method);if(!s)return;
+ const xy=pointCoordinates(s,m),neighbors=getNeighbors(s,m),pred=neighbors[0]?.label;
+ const im=document.getElementById('selected-image');im.src=data.thumbnails[String(s.id)];im.alt=`原始索引 ${s.id} 的手写数字 ${s.label}`;
+ document.getElementById('sample-meta').innerHTML=`<strong>数字 ${s.label}</strong><br>原始索引 #${s.id}<br><span class="text-muted">${s.split==='test'?'测试集':'训练集'}</span>`;
+ document.getElementById('coordinates').textContent=`z = (${fmt(xy[0])}, ${fmt(xy[1])})`;
+ document.getElementById('prediction').innerHTML=`${s.split==='test'?'1-NN 预测':'留一最近邻'}：<strong>${pred}</strong> <span class="${pred===s.label?'match':'text-muted'}">${pred===s.label?'与真实类别一致':'与真实类别不同'}</span>`;
+ const box=document.getElementById('neighbors');box.replaceChildren();
+ for(const[n,v]of neighbors.entries()){
+  const b=document.createElement('button');b.type='button';b.className='neighbor';b.setAttribute('aria-label',`第 ${n+1} 近的训练图片，索引 ${v.id}，数字 ${v.label}，距离 ${fmt(v.distance)}。点击查看。`);
+  const image=document.createElement('img');image.className='digit';image.src=data.thumbnails[String(v.id)];image.alt=`数字 ${v.label}`;image.width=70;image.height=70;
+  const text=document.createElement('span');text.className=`ntext ${v.label===s.label?'good':'bad'}`;text.innerHTML=`${n+1}. 数字 ${v.label}<br>d=${fmt(v.distance)}`;
+  b.append(image,text);b.addEventListener('click',()=>{state.selected=String(v.id);if(state.split==='test'){state.split='both';document.getElementById('split').value='both';}state.classes.add(v.label);syncClassButtons();update(false);});box.append(b);
+ }
+ picker.value=state.selected;
+ document.getElementById('selection-status').textContent=s.split==='test'?`在训练图片中找邻居；当前显示 ${visible.length} 个点。`:'当前查看训练图片：邻居已排除图片自身。';
+}
+function syncPicker(){
+ const list=samples.filter(shown);visible=list;
+ if(!list.some(s=>String(s.id)===state.selected))state.selected=String(list.find(s=>s.split==='test')?.id??list[0]?.id??data.query.id);
+ picker.replaceChildren();for(const s of list){const o=document.createElement('option');o.value=s.id;o.textContent=`#${s.id} · 数字 ${s.label} · ${s.split==='test'?'测试':'训练'}${s.split==='test'&&byId.get(state.method).predictions[s.index]!==s.label?' · 错分为 '+byId.get(state.method).predictions[s.index]:''}`;picker.append(o);}picker.value=state.selected;
+ picker.disabled=!list.length;
+}
+function syncClassButtons(){for(const b of root.querySelectorAll('[data-class]'))b.setAttribute('aria-pressed',String(state.classes.has(Number(b.dataset.class))));}
+function geometry(){
+ const w=svg.clientWidth,h=svg.clientHeight;const margin={left:64,right:22,top:16,bottom:57};
+ const m=byId.get(state.method),all=m.train_coordinates.concat(m.test_coordinates);
+ let loX=Infinity,hiX=-Infinity,loY=Infinity,hiY=-Infinity;for(const[x,y]of all){loX=Math.min(loX,x);hiX=Math.max(hiX,x);loY=Math.min(loY,y);hiY=Math.max(hiY,y);}
+ const iw=Math.max(100,w-margin.left-margin.right),ih=Math.max(100,h-margin.top-margin.bottom);
+ const pad=.09,cx=(loX+hiX)/2,cy=(loY+hiY)/2;
+ const per=Math.max((hiX-loX||1)*(1+pad*2)/iw,(hiY-loY||1)*(1+pad*2)/ih);
+ const dx=iw*per,dy=ih*per;
+ return{w,h,margin,iw,ih,xlo:cx-dx/2,xhi:cx+dx/2,ylo:cy-dy/2,yhi:cy+dy/2,x:x=>margin.left+iw/2+(x-cx)/per,y:y=>margin.top+ih/2-(y-cy)/per};
+}
+function shape(s,p,r){
+ const attrs={fill:s.split==='test'?'var(--paper)':classColor(s.label),stroke:classColor(s.label),'stroke-width':s.split==='test'?1.7:1,opacity:s.split==='train'?.48:.91,'data-sample-id':s.id};
+ if(s.label===0)return node('circle',{cx:p[0],cy:p[1],r,...attrs});
+ if(s.label===2)return node('rect',{x:p[0]-r*.86,y:p[1]-r*.86,width:r*1.72,height:r*1.72,...attrs});
+ return node('path',{d:`M${p[0]},${p[1]-r*1.12} L${p[0]+r},${p[1]+r*.75} L${p[0]-r},${p[1]+r*.75} Z`,...attrs});
+}
+function ticks(lo,hi,n){const out=[];for(let i=0;i<n;i++)out.push(lo+(hi-lo)*(i+1)/(n+1));return out;}
+function draw(g,positions){
+ svg.replaceChildren(node('title',{},`${byId.get(state.method).name} 二维投影`),node('desc',{},'颜色和形状表示类别，空心点是测试集，实心点是训练集。点击点或用样本选择器查看原图与最近邻。'));
+ svg.setAttribute('viewBox',`0 0 ${g.w} ${g.h}`);
+ const axes=node('g');const n=g.w<450?3:4;
+ for(const v of ticks(g.xlo,g.xhi,n)){const x=g.x(v);axes.append(node('line',{x1:x,y1:g.margin.top,x2:x,y2:g.margin.top+g.ih,class:'grid'}),node('text',{x,y:g.margin.top+g.ih+22,'text-anchor':'middle',class:'tick'},v.toFixed(1)));}
+ for(const v of ticks(g.ylo,g.yhi,n)){const y=g.y(v);axes.append(node('line',{x1:g.margin.left,y1:y,x2:g.margin.left+g.iw,y2:y,class:'grid'}),node('text',{x:g.margin.left-10,y:y+4,'text-anchor':'end',class:'tick'},v.toFixed(1)));}
+ axes.append(node('rect',{x:g.margin.left,y:g.margin.top,width:g.iw,height:g.ih,class:'frame','data-chart-frame':''}));
+ axes.append(node('text',{x:g.margin.left+g.iw/2,y:g.h-10,'text-anchor':'middle',class:'axis-label','data-axis':'x'},'投影坐标 1（特征单位）'));
+ axes.append(node('text',{transform:`translate(16 ${g.margin.top+g.ih/2}) rotate(-90)`,'text-anchor':'middle',class:'axis-label','data-axis':'y'},'投影坐标 2（特征单位）'));svg.append(axes);
+ const marks=node('g',{'aria-hidden':'true'});const ordered=visible.slice().sort((a,b)=>(a.split==='test')-(b.split==='test'));
+ for(const s of ordered){const p=positions.get(String(s.id));if(p){marks.append(shape(s,p,s.split==='test'?4.7:3.7));if(s.split==='test'&&byId.get(state.method).predictions[s.index]!==s.label)marks.append(node('path',{d:`M${p[0]-2.7},${p[1]-2.7}L${p[0]+2.7},${p[1]+2.7}M${p[0]+2.7},${p[1]-2.7}L${p[0]-2.7},${p[1]+2.7}`,stroke:'var(--ink)','stroke-width':1.35,fill:'none','data-misclassified':s.id}));}}
+ const p=positions.get(state.selected),sel=sampleMap.get(state.selected);if(p&&sel&&shown(sel))marks.append(node('circle',{cx:p[0],cy:p[1],r:10.5,class:'selected'}));svg.append(marks);
+ if(!visible.length)svg.append(node('text',{x:g.margin.left+g.iw/2,y:g.margin.top+g.ih/2,'text-anchor':'middle'},'选择一个数字类别以显示样本'));
+ svg.append(node('rect',{x:g.margin.left,y:g.margin.top,width:g.iw,height:g.ih,fill:'transparent','data-chart-hit':'','data-chart-hover-overlay':'nearest-point'}));
+}
+function update(animate=false){
+ cancelAnimationFrame(raf);tip.style.display='none';syncPicker();
+ const m=byId.get(state.method);document.getElementById('method-goal').textContent=meta[state.method].goal;document.getElementById('method-formula').textContent=meta[state.method].formula;
+ document.getElementById('score').textContent=`全部 ${m.total} 张测试图：${m.correct}/${m.total} 正确（${pct(m.accuracy)}）`;
+ for(const b of root.querySelectorAll('[data-method]'))b.setAttribute('aria-pressed',String(b.dataset.method===state.method));
+ const g=geometry();width=g.w;height=g.h;targetScreen=new Map(samples.map(s=>[String(s.id),[g.x(pointCoordinates(s)[0]),g.y(pointCoordinates(s)[1])]]));
+ const previous=currentScreen;const start=performance.now();const duration=animate&&!reduced.matches&&previous.size?620:0;
+ function frame(now){const t=duration?Math.min(1,(now-start)/duration):1,e=t*t*(3-2*t);const ps=new Map();for(const[id,p]of targetScreen){const a=previous.get(id)||p;ps.set(id,[a[0]+(p[0]-a[0])*e,a[1]+(p[1]-a[1])*e]);}currentScreen=ps;draw(g,ps);if(t<1)raf=requestAnimationFrame(frame);}
+ frame(start);updateDetail();
+}
+function near(event){const r=svg.getBoundingClientRect(),x=(event.clientX-r.left)*width/r.width,y=(event.clientY-r.top)*height/r.height;let best=null,d=Infinity;for(const s of visible){const p=currentScreen.get(String(s.id));if(!p)continue;const dd=Math.hypot(p[0]-x,p[1]-y);if(dd<d){d=dd;best=s;}}return d<26?best:null;}
+svg.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const s=near(e);lastHover=s;if(!s){tip.style.display='none';return;}const p=pointCoordinates(s);tip.textContent=`#${s.id} · 数字 ${s.label} · ${s.split==='test'?'测试':'训练'}　(${fmt(p[0])}, ${fmt(p[1])})`;const r=svg.parentElement.getBoundingClientRect();tip.style.display='block';const tw=tip.offsetWidth;tip.style.left=Math.min(Math.max(5,e.clientX-r.left+12),r.width-tw-5)+'px';tip.style.top=Math.max(35,e.clientY-r.top-48)+'px';});
+svg.addEventListener('pointerleave',()=>{tip.style.display='none';lastHover=null;});
+svg.addEventListener('click',e=>{const s=near(e);if(s){state.selected=String(s.id);update(false);}});
+for(const b of root.querySelectorAll('[data-method]'))b.addEventListener('click',()=>{if(state.method===b.dataset.method)return;state.method=b.dataset.method;update(true);});
+for(const b of root.querySelectorAll('[data-class]'))b.addEventListener('click',()=>{const c=Number(b.dataset.class);state.classes.has(c)?state.classes.delete(c):state.classes.add(c);syncClassButtons();update(false);});
+document.getElementById('split').addEventListener('change',e=>{state.split=e.target.value;update(false);});picker.addEventListener('change',e=>{state.selected=e.target.value;update(false);});
+const full=document.getElementById('fullscreen');full.addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(_){full.textContent='可用浏览器菜单全屏';}});document.addEventListener('fullscreenchange',()=>{document.documentElement.classList.toggle('fullscreen',Boolean(document.fullscreenElement));full.textContent=document.fullscreenElement?'退出全屏':'全屏演示';update(false);});
+document.getElementById('dataset-label').textContent=`同一批 Digits 0／1／2：${data.train_ids.length} 张训练，${data.test_ids.length} 张测试。原图变成两个坐标，再比较最近邻。`;
+document.getElementById('protocol').textContent=`固定原始 seed16 划分，先筛选类别 0、1、2，再用训练数据拟合。固定示例为原始索引 #${data.query.id}（数字 ${data.query.label}），在查看结果前选定。`;
+new ResizeObserver(()=>{if(Math.abs(svg.clientWidth-width)>1||Math.abs(svg.clientHeight-height)>1)update(false);}).observe(svg);
+window.mfaDemo={getState:()=>({method:state.method,split:state.split,classes:[...state.classes],selected:state.selected,visible:visible.length}),selectMethod:id=>{if(!byId.has(id))throw Error('Unknown method');state.method=id;update(false);},selectSample:id=>{if(!sampleMap.has(String(id)))throw Error('Unknown sample');state.selected=String(id);const s=sampleMap.get(state.selected);state.classes.add(s.label);if(state.split!==s.split)state.split='both';document.getElementById('split').value=state.split;syncClassButtons();update(false);},getNeighbors:id=>getNeighbors(sampleMap.get(String(id))),getData:()=>data};
+update(false);
+})();
+</script>
+</body>
+</html>
